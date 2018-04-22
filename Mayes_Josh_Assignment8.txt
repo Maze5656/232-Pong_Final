@@ -1,0 +1,59 @@
+1. Database SQL
+
+2. Required functionality
+
+A) A table (30mins-1hour)
+	- Will need a class to create the table and create and label the rows
+	- The table needs these columns:
+		1. Player 1 name
+		2. Player 2 name (will be CPU if single player)
+		3. Winner (the name of the player who won the match)
+		
+B) Database methods(2-3hours+)
+	- Can create a database class to handle related functions.
+	- Needs method to insert data into the table
+		- The method will need to get data from the Pong application and place it into a row at appropriate times. Needs to get: 
+			1. Player 1 name
+				(The game does not track the user's name yet. We need a way to let the user enter their name - 
+				 like on the welcomeScene.)
+			2. Player 2 name
+				(Only if user picks 2 player game)
+			3. Winner 
+				(The player that won the match.)
+	- Needs method to return the top 10 players from the database with the most wins
+	
+C) A way to display the Leaderboard (1-2hours+)
+	- Could be a new scene class similar to welcomeScene or courtScene, but only displays the leaderboard using the
+		Database class we will create.
+	- Can be an option on the welcomeScene. User presses TAB to view and then TAB again to return to welcomeScene.
+
+3. Behavior Driven Development Documentation
+
+CREATE THE TABLE: 
+- First create a class that can make a table.
+- Then move on to the class being able to create the required columns. Table should have: 
+	a gameID to track every game played (it will be the primary key), 
+	a Player 1 Name column, 
+	a Player 2 Name column, 
+	a game winner column. 
+- Then work on the table being able to insert rows into the columns. 
+
+CREATE THE DATABASE_METHODS CLASS:
+- Make a method that can take the data of who wins a match
+- Then this method should be able to insert the data into the appropriate row.
+
+- Make a method to get a player that has the most wins and return that player for displaying.
+- Then make the method get the 10 players with the most wins and return them.
+- Then make the method return the 10 players in descending order, so the one with the most wins appears first.
+
+CREATE A DISPLAYABLE LEADERBOARD
+- Design an option on the WelcomeScene to view the top 10 players from the database. 
+	- We could create a new scene for the leaderboard. Call it LeaderboardScene
+- Move the user to the leaderboardScene when the TAB key is pressed.
+- Then make this new Scene display the top 10 players.
+- Once the data can be displayed, add formatting and style to this data
+- Then make this scene wait for the player to hit TAB again to return to the WelcomeScreen.
+
+It could make it more complicated though, I’m not sure. If we did go with a single table, 
+we could name it Matches and have it record the match number(the id), names of the players of that match, 
+and who won the match. Then it makes sense for it to be a single table. 

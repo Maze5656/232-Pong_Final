@@ -35,9 +35,9 @@ public class WelcomeScene extends AbstractScene {
 	private final Text leftControlsText;
 	private final Text rightControlsTopicText;
 	private final Text rightControlsText;
-	private final Text proceedInstructionsText;
-	//private final Text onePlayerSelection;
+	private final Text onePlayerSelection;
 	private final Text twoPlayerSelection;
+
 	// CUSTOM
 	private boolean isSinglePlayer = false;
 
@@ -81,19 +81,19 @@ public class WelcomeScene extends AbstractScene {
 		rightControlsText.setLayoutY(rightControlsTopicText.getLayoutY() + 40);
 		rightControlsText.setFill(Color.WHITE);
 
-		proceedInstructionsText = new Text("Press [SPACE] to start Single Player");
-		proceedInstructionsText.setTextOrigin(VPos.CENTER);
-		proceedInstructionsText.setFont(SMALL_FONT);
-		proceedInstructionsText.setLayoutX((RESOLUTION_WIDTH - proceedInstructionsText.prefWidth(-1)) / 2);
-		proceedInstructionsText.setLayoutY(rightControlsTopicText.getLayoutY() + 160);
-		proceedInstructionsText.setFill(Color.WHITE);
+		onePlayerSelection = new Text("Press [SPACE] to start Single Player");
+		onePlayerSelection.setTextOrigin(VPos.CENTER);
+		onePlayerSelection.setFont(SMALL_FONT);
+		onePlayerSelection.setLayoutX((RESOLUTION_WIDTH - onePlayerSelection.prefWidth(-1)) / 2);
+		onePlayerSelection.setLayoutY(rightControlsTopicText.getLayoutY() + 160);
+		onePlayerSelection.setFill(Color.WHITE);
 
 // --------------------------- CUSTOM block
 		twoPlayerSelection = new Text("Press [ENTER] to start with 2 Players");
 		twoPlayerSelection.setTextOrigin(VPos.CENTER);
 		twoPlayerSelection.setFont(SMALL_FONT);
 		twoPlayerSelection.setLayoutX((RESOLUTION_WIDTH - twoPlayerSelection.prefWidth(-1)) / 2);
-		twoPlayerSelection.setLayoutY(proceedInstructionsText.getLayoutY() + 40);
+		twoPlayerSelection.setLayoutY(onePlayerSelection.getLayoutY() + 40);
 		twoPlayerSelection.setFill(Color.DODGERBLUE);
 // --------------------------- CUSTOM end
 
@@ -109,7 +109,7 @@ public class WelcomeScene extends AbstractScene {
 		children.add(leftControlsText);
 		children.add(rightControlsTopicText);
 		children.add(rightControlsText);
-		children.add(proceedInstructionsText);
+		children.add(onePlayerSelection);
 		children.add(twoPlayerSelection);
 
 		setOnKeyReleased(x -> {
